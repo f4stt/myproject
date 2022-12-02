@@ -53,62 +53,79 @@ a {
 /* nav */
 
 .nav {
-    display: flex;
-    column-gap: 20px;
-    align-items: center;
-}
-
-.nav .nav-item {
+    font-size: 0;
     position: relative;
-    white-space: nowrap;
 }
 
-
-.nav-item-nav {
-    position: absolute;
-    display: none;
-    top: 100%;
-    padding-top: 30px;
-    background-color: blueviolet;
-    right: 0;
-    left: 0;
-    z-index: 5;
+.nav>.nav-item {
+    font-size: 1rem;
+    display: inline-block;
 }
 
-.nav-item a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: antiquewhite;
-    text-align: center;
+.nav-item>a {
     display: block;
-    padding: 10px;
+    padding: 4px 0 10px 27px;
+    position: relative;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
 .nav-item a:hover {
-    background-color: brown;
+    color: gray;
 }
 
-.layouts {
+.nav>.nav-item+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-item .homeworks,
+.nav-item .layouts {
     position: relative;
 }
 
-.item-nav-nav {
+.nav-second {
     position: absolute;
-    right: 100%;
-    background-color: blueviolet;
+    top: -1000px;
+    padding: 20px;
+    transition: all .5s;
+}
+
+.nav-third {
+    position: absolute;
+    right: -1000px;
     top: 0;
-    display: none;
-    z-index: 5;
-}
-
-.nav .nav-item:hover .nav-item-nav {
     display: block;
+    transition: all 1s;
 }
 
-.nav-item .layouts:hover .item-nav-nav {
-    display: block;
+.nav-third .nav-item {
+    white-space: nowrap;
+    padding-right: 10px;
 }
 
+.nav .nav-item:hover .nav-second {
+    top: 100%;
+}
+
+.nav-item .layouts:hover .nav-third {
+    right: 100%;
+}
+
+.nav-item .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-item .right {
+    padding-right: 27px;
+    padding-left: 0;
+}
+
+.nav-item .icon-right {
+    right: 0;
+    left: auto;
+}
 
 /* table */
 
@@ -302,4 +319,10 @@ a {
     content: '';
     display: block;
     clear: both;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff
 }
