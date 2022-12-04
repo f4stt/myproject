@@ -370,6 +370,11 @@ a {
 .list-section .icon:hover {
     transform: rotate(315deg);
     transition: all 1s;
+}
+
+.list-item a:hover {
+    background: blue;
+    transition: all .5s;
     fill: yellowgreen;
 }
 
