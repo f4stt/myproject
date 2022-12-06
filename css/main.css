@@ -160,19 +160,17 @@ a {
 .section {
     padding: 50px 0;
     position: relative;
-    overflow: hidden;
+    padding: 0;
 }
 
 .section-primary {
     min-height: 100vh;
     background: #000;
-    padding: 0;
 }
 
 .section-second {
     min-height: 100vh;
     background: red;
-    padding: 0;
 }
 
 .section-title {
@@ -338,57 +336,63 @@ a {
     fill: #ffffff
 }
 
-
-.title {
-    color: #ffffff;
-    text-transform: uppercase;
-    background: blue;
-    padding: 10px 0;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.box-list {
-    position: fixed;
-    bottom: -150px;
-    right: 200px;
-    transition: all .5s;
+.box-menu {
     width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 200px;
     background: gray;
-}
-
-.list-section {
-    text-align: center;
-    position: relative;
-    transform: rotate(45deg);
-    padding: 20px;
-    bottom: 0;
-    z-index: -5;
-}
-
-.list-section .icon:hover {
-    transform: rotate(315deg);
-    transition: all 1s;
-}
-
-.list-item a:hover {
-    background: blue;
+    padding-bottom: 30px;
     transition: all .5s;
-    fill: yellowgreen;
+    transform: translateY(calc(100% - 46px));
 }
 
-.box-list:hover {
-    bottom: 0;
+.box-menu:hover {
+    transform: translateY(0);
+}
+
+.menu-title {
+    background: blue;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: default;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100px;
+    margin: 0 auto;
+    transform: rotate(45deg);
 }
 
 .list-item .icon {
     transform: rotate(-45deg);
+    transition: all 1s;
 }
 
-.list-section .list-item a {
-    margin: 0 10px 10px 0;
-    display: inline-block;
-    border: 1px solid yellow;
+.menu-list .list-item {
+    border: 1px solid yellowgreen;
+    overflow: hidden;
+    transition: all 4s;
+}
+
+.menu-list .list-item a {
     padding: 5px;
+    display: block;
+    line-height: 0;
+}
+
+.menu-list .list-item:hover {
+    background: #000;
+}
+
+.list-item a:hover .icon {
+    fill: aquamarine;
+    transform: rotate(315deg);
 }
