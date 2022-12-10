@@ -343,7 +343,7 @@ a {
     right: 200px;
     background: gray;
     padding-bottom: 30px;
-    transition: all .5s;
+    transition: all 1s;
     transform: translateY(calc(100% - 46px));
 }
 
@@ -351,7 +351,7 @@ a {
     transform: translateY(0);
 }
 
-.menu-title {
+.menu-title h3 {
     background: blue;
     padding: 15px 0;
     text-align: center;
@@ -359,6 +359,70 @@ a {
     cursor: default;
     color: #ffffff;
     margin-bottom: 30px;
+    animation: shake 1s infinite;
+}
+
+.box-menu:hover .menu-title h3 {
+    animation: none;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(3px);
+    }
+
+    10% {
+        transform: translateX(-3px);
+
+    }
+
+    20% {
+        transform: translate(-3px);
+
+    }
+
+    30% {
+        transform: translateX(3px);
+
+    }
+
+    40% {
+        transform: translateX(-3px);
+
+    }
+
+    50% {
+        transform: translateX(2px);
+
+    }
+
+    60% {
+        transform: translateX(-2px);
+
+    }
+
+    70% {
+        transform: translateX(2px);
+
+    }
+
+    80% {
+        transform: translateX(-2px);
+
+    }
+
+    90% {
+        transform: translateX(1px);
+
+    }
+
+    100% {
+        transform: translateX(-1px);
+    }
+}
+
+.menu-title {
+    background: transparent;
 }
 
 .menu-list {
@@ -395,4 +459,40 @@ a {
 .list-item a:hover .icon {
     fill: aquamarine;
     transform: rotate(315deg);
+}
+
+.run-man {
+    background: url(../images/1.png);
+    height: 256px;
+    width: 256px;
+    animation: run 1s steps(6) infinite;
+}
+
+@keyframes run {
+    0% {
+        background-position: 0, 0;
+    }
+
+    100% {
+        background-position: -1536px;
+    }
+}
+
+
+.egg {
+    background: url(../images/2.png);
+    width: 327px;
+    height: 444px;
+    margin: 0 auto;
+    animation: egg 1s steps(10) infinite;
+}
+
+@keyframes egg {
+    0% {
+        background-position: 0, 0;
+    }
+
+    100% {
+        background-position: -3270px;
+    }
 }
